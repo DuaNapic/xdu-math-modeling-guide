@@ -24,3 +24,13 @@ Record only decisions that constrain future product or implementation work. Appe
 - Affected systems: raw_materials, provenance, repository_hygiene
 - Supersedes: none
 
+### D-20260913-02: Use one canonical copy for identical source files
+
+- Date: 2026-09-13
+- Status: accepted
+- Context: Official pages and public GitHub archives often carry identical copies of a problem or attachment.
+- Decision: Compare imported files by SHA-256 and keep a single clearly sourced copy when content is identical; merge only genuinely distinct attachments.
+- Consequences: Source indexes may cite several completeness-checking repositories while the file tree stores only one canonical copy. Duplicate working files remain outside version control or are removed.
+- Affected systems: raw_materials, provenance, repository_hygiene
+- Supersedes: none
+

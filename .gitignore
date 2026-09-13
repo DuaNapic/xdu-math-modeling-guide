@@ -3,3 +3,9 @@
 *.part
 Thumbs.db
 Desktop.ini
+
+.source-cache/
+资料/
+output/pdf/*.png
+output/pdf/qa-index-*.png
+03_美赛_MCM_ICM/历年真题/2026/2026_MCM_Problem_C_Data.csv
