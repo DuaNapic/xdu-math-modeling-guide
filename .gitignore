@@ -1,0 +1,5 @@
+# Keep the repository focused on source material.
+*.tmp
+*.part
+Thumbs.db
+Desktop.ini

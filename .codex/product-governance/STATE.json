@@ -1,0 +1,54 @@
+﻿{
+    "schema_version":  1,
+    "product":  {
+                    "name":  "西电数学建模资料归档",
+                    "status":  "active"
+                },
+    "current_phase":  {
+                          "id":  "P1",
+                          "name":  "Core Source Coverage",
+                          "objective":  "Establish the requested source index, directory structure, and core downloadable files.",
+                          "exit_criteria":  [
+                                                "The source index covers the named Xidian, CUMCM, COMAP, association, and public sharing pages.",
+                                                "Every confirmed direct-download core CUMCM PDF is stored as an original file.",
+                                                "The repository has no tutorial or rewritten educational content."
+                                            ],
+                          "evidence":  [
+
+                                       ]
+                      },
+    "active_work":  {
+                        "system_ids":  ["raw-materials", "provenance", "repository-hygiene"],
+                        "objective":  "Create the source index and archive the confirmed CUMCM core PDFs.",
+                        "acceptance":  [
+                                           "The source index contains all user-confirmed URLs.",
+                                           "Three CUMCM PDFs are present and non-empty.",
+                                           "The governance audit passes without structural errors."
+                                       ],
+                        "status":  "completed"
+                    },
+    "balance_policy":  {
+                           "maximum_must_have_spread":  2,
+                           "allowed_exceptions":  [
+
+                                                  ]
+                       },
+    "systems":  [
+        {"id":"raw-materials","name":"原始附件归档","purpose":"Store public original attachments.","priority":"must","status":"active","maturity":2,"target_maturity":4,"dependencies":[],"next_gate":"Add newly discovered official/public attachments.","acceptance":["Core downloadable files are stored and open"],"evidence":["资料/CUMCM/2026 contains three downloaded PDFs"]},
+        {"id":"provenance","name":"来源可追溯性","purpose":"Keep every source page and direct URL traceable.","priority":"must","status":"active","maturity":2,"target_maturity":4,"dependencies":[],"next_gate":"Verify additional pages and attachment relationships.","acceptance":["Every source page has its original URL"],"evidence":["资料/索引/来源链接.md lists all user-confirmed URLs"]},
+        {"id":"repository-hygiene","name":"仓库卫生","purpose":"Keep the archive simple and free of generated tutorials.","priority":"must","status":"active","maturity":2,"target_maturity":3,"dependencies":[],"next_gate":"Run audit and maintain stable naming/layout.","acceptance":["No tutorial or generated rewrite files are present"],"evidence":["README.md is minimal; no tutorial files present"]}
+    ],
+    "requirements":  [
+        {"id":"REQ-SOURCES","text":"Cover the user-confirmed Xidian, association, CUMCM, COMAP, and public-sharing URLs.","priority":"must","status":"verified","system_ids":["provenance"],"acceptance":["All named URLs appear in the source index"],"evidence":["资料/索引/来源链接.md"]},
+        {"id":"REQ-PDFS","text":"Archive directly downloadable CUMCM rule, format, and charter PDFs.","priority":"must","status":"verified","system_ids":["raw-materials"],"acceptance":["Three core PDFs are present and non-empty"],"evidence":["资料/CUMCM/2026/*.pdf"]},
+        {"id":"REQ-NO-TUTORIAL","text":"Do not add tutorials, routes, summaries, or AI-generated rewrites.","priority":"must","status":"verified","system_ids":["repository-hygiene"],"acceptance":["Repository contains only archive-oriented files"],"evidence":["README.md and directory inventory"]}
+    ],
+    "debt":  [
+
+             ],
+    "risks":  [
+
+              ],
+    "last_updated":  "2026-09-13",
+    "last_audited":  "2026-09-13"
+}
