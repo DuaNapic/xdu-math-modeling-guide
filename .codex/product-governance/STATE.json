@@ -26,7 +26,7 @@
       "The PDF structure index reflects the actual repository layout and source links.",
       "The governance audit passes and the commit is pushed to DuaNapic/xdu-math-modeling-guide."
     ],
-    "status": "in_progress"
+    "status": "completed"
   },
   "balance_policy": {"maximum_must_have_spread": 2, "allowed_exceptions": []},
   "systems": [
@@ -57,7 +57,7 @@
     {"id": "REQ-CUMCM-HISTORY", "text": "Archive available CUMCM problems and attachments for 1992-2025, supplementing with public solutions where useful.", "priority": "must", "status": "verified", "system_ids": ["raw-materials", "provenance"], "acceptance": ["Historical files exist under the existing CUMCM directory and their source is recorded"], "evidence": ["02_国赛_CUMCM/历年真题", "08_时间线/来源索引.md"]},
     {"id": "REQ-MCM-HISTORY", "text": "Systematically collect public MCM/ICM problems, data, Student Solutions, Judges Commentary, and excellent papers.", "priority": "must", "status": "in_progress", "system_ids": ["raw-materials", "provenance"], "acceptance": ["Available official and public files are organized by year without duplicate copies"], "evidence": ["03_美赛_MCM_ICM/历年真题/2026", "03_美赛_MCM_ICM/官方/2027"]},
     {"id": "REQ-NO-TUTORIAL", "text": "Do not add tutorials, routes, summaries, unrelated Xidian learning material, or AI-generated solutions.", "priority": "must", "status": "verified", "system_ids": ["repository-hygiene"], "acceptance": ["Repository contains only archive-oriented files"], "evidence": ["README.md and repository inventory"]},
-    {"id": "REQ-DEDUP", "text": "Store only one copy when different sources contain identical file content.", "priority": "must", "status": "verified", "system_ids": ["repository-hygiene"], "acceptance": ["Repository-wide SHA-256 duplicate scan is clean"], "evidence": ["2026-09-13 SHA-256 audit of the working archive"]}
+    {"id": "REQ-DEDUP", "text": "Store only one copy when different sources contain identical file content.", "priority": "must", "status": "verified", "system_ids": ["repository-hygiene"], "acceptance": ["Repository-wide SHA-256 duplicate scan is clean"], "evidence": ["2026-09-13 SHA-256 audit of the working archive", "Commit 3244542 pushed to DuaNapic/xdu-math-modeling-guide main"]}
   ],
   "debt": [{"id": "DEBT-MCM-HISTORY", "severity": "medium", "description": "Historical MCM/ICM problem, Student Solutions, Judges Commentary, and excellent-paper coverage is still sparse compared with CUMCM.", "system_ids": ["raw-materials", "provenance"]}],
   "risks": [{"id": "RISK-GITHUB-SIZE", "severity": "medium", "description": "The historical CUMCM import is approximately 500 MB, so the initial GitHub push may be slow even though individual files are below GitHub's 100 MB limit."}],
