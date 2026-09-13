@@ -34,13 +34,13 @@
                                                   ]
                        },
     "systems":  [
-        {"id":"raw-materials","name":"原始附件归档","purpose":"Store public original attachments.","priority":"must","status":"active","maturity":2,"target_maturity":4,"dependencies":[],"next_gate":"Add newly discovered official/public attachments.","acceptance":["Core downloadable files are stored and open"],"evidence":["资料/CUMCM/2026 contains three downloaded PDFs"]},
+        {"id":"raw-materials","name":"原始附件归档","purpose":"Store public original attachments.","priority":"must","status":"active","maturity":2,"target_maturity":4,"dependencies":[],"next_gate":"Add newly discovered official/public attachments.","acceptance":["Core downloadable files are stored and open"],"evidence":["资料/CUMCM/2026 contains three PDFs; 资料/COMAP/MCM-ICM-2027 contains seven original attachments"]},
         {"id":"provenance","name":"来源可追溯性","purpose":"Keep every source page and direct URL traceable.","priority":"must","status":"active","maturity":2,"target_maturity":4,"dependencies":[],"next_gate":"Verify additional pages and attachment relationships.","acceptance":["Every source page has its original URL"],"evidence":["资料/索引/来源链接.md lists all user-confirmed URLs"]},
         {"id":"repository-hygiene","name":"仓库卫生","purpose":"Keep the archive simple and free of generated tutorials.","priority":"must","status":"active","maturity":2,"target_maturity":3,"dependencies":[],"next_gate":"Run audit and maintain stable naming/layout.","acceptance":["No tutorial or generated rewrite files are present"],"evidence":["README.md is minimal; no tutorial files present"]}
     ],
     "requirements":  [
         {"id":"REQ-SOURCES","text":"Cover the user-confirmed Xidian, association, CUMCM, COMAP, and public-sharing URLs.","priority":"must","status":"verified","system_ids":["provenance"],"acceptance":["All named URLs appear in the source index"],"evidence":["资料/索引/来源链接.md"]},
-        {"id":"REQ-PDFS","text":"Archive directly downloadable CUMCM rule, format, and charter PDFs.","priority":"must","status":"verified","system_ids":["raw-materials"],"acceptance":["Three core PDFs are present and non-empty"],"evidence":["资料/CUMCM/2026/*.pdf"]},
+        {"id":"REQ-PDFS","text":"Archive directly downloadable CUMCM and COMAP core rule materials.","priority":"must","status":"verified","system_ids":["raw-materials"],"acceptance":["CUMCM core PDFs and confirmed COMAP attachments are present and non-empty"],"evidence":["资料/CUMCM/2026/*.pdf; 资料/COMAP/MCM-ICM-2027/*"]},
         {"id":"REQ-NO-TUTORIAL","text":"Do not add tutorials, routes, summaries, or AI-generated rewrites.","priority":"must","status":"verified","system_ids":["repository-hygiene"],"acceptance":["Repository contains only archive-oriented files"],"evidence":["README.md and directory inventory"]}
     ],
     "debt":  [
