@@ -7,23 +7,25 @@
     "objective": "Expand historical CUMCM and MCM/ICM source coverage while preserving provenance and eliminating duplicate files.",
     "exit_criteria": [
       "CUMCM 1992-2025 public problem files and attachments are organized in the existing repository.",
-      "Available official MCM/ICM problems and supporting files are archived without duplicate copies.",
+      "Available official MCM/ICM problems, data, results, and Judges' Commentary are archived without duplicate copies.",
       "Every imported collection is traceable to its public source and the repository-wide hash audit is clean."
     ],
     "evidence": [
       "02_国赛_CUMCM/历年真题 contains 1992-2025 source material.",
-      "03_美赛_MCM_ICM/历年真题/2026 contains the official COMAP problem ZIP.",
+      "03_美赛_MCM_ICM contains 146 public COMAP files: problems/data, official results, Judges' Commentary, and 2027 rule attachments.",
+      "03_美赛_MCM_ICM/SOURCES.md records COMAP 1999-2026 problem/results pages and the MathModels membership boundary.",
       "08_时间线/来源索引.md records official and supplemental source URLs."
     ]
   },
   "active_work": {
     "system_ids": ["raw-materials", "provenance", "repository-hygiene"],
-    "objective": "Import the available CUMCM 1992-2025 archive and current public COMAP problem materials into the existing repository, then verify and publish them.",
+    "objective": "Import and verify the publicly downloadable COMAP historical problems, data, official results, and Judges' Commentary while preserving the existing CUMCM archive.",
     "acceptance": [
       "CUMCM historical material is present under 02_国赛_CUMCM/历年真题.",
-      "The 2026 COMAP problem ZIP is present under 03_美赛_MCM_ICM/历年真题/2026.",
+      "Public COMAP files are organized under 03_美赛_MCM_ICM by year and material type.",
+      "MathModels membership-only Student Solutions and Outstanding Papers are recorded by URL but not downloaded.",
       "No identical file content is stored twice in the committed archive.",
-      "The PDF structure index reflects the actual repository layout and source links.",
+      "The PDF structure index reflects the actual repository layout, current counts, and COMAP source links.",
       "The governance audit passes and the commit is pushed to DuaNapic/xdu-math-modeling-guide."
     ],
     "status": "completed"
@@ -33,29 +35,29 @@
     {
       "id": "raw-materials", "name": "原始附件归档", "purpose": "Store public original problems, attachments, rules, papers, and supporting files.",
       "priority": "must", "status": "active", "maturity": 3, "target_maturity": 4, "dependencies": [],
-      "next_gate": "Expand official and public MCM/ICM historical coverage, Student Solutions, Judges Commentary, and excellent papers.",
+      "next_gate": "Expand public MCM/ICM Student Solutions and excellent-paper coverage when openly downloadable; keep membership-only resources as links.",
       "acceptance": ["Archived files are public, non-empty, organized, and openable"],
-      "evidence": ["02_国赛_CUMCM contains 1,276 files including 1992-2025 problems and attachments.", "03_美赛_MCM_ICM contains 9 official problem/rule files."]
+      "evidence": ["02_国赛_CUMCM contains 1,276 files including 1992-2025 problems and attachments.", "03_美赛_MCM_ICM contains 146 public COMAP files, including 38 historical problem/data files, 96 official result reports, 4 Judges' Commentary files, and 7 rule/process attachments."]
     },
     {
       "id": "provenance", "name": "来源可追溯性", "purpose": "Keep every source page and imported collection traceable.",
       "priority": "must", "status": "active", "maturity": 3, "target_maturity": 4, "dependencies": [],
       "next_gate": "Record source links for each newly imported collection or restricted online-only source.",
       "acceptance": ["Every imported collection has an original URL"],
-      "evidence": ["08_时间线/来源索引.md lists official, GitHub archive, association, and student-sharing sources."]
+      "evidence": ["08_时间线/来源索引.md lists official, GitHub archive, association, student-sharing, and COMAP historical sources.", "03_美赛_MCM_ICM/SOURCES.md lists COMAP 1999-2026 problem/results pages and membership restrictions."]
     },
     {
       "id": "repository-hygiene", "name": "仓库卫生", "purpose": "Keep the archive simple, deduplicated, and free of generated tutorials.",
       "priority": "must", "status": "active", "maturity": 3, "target_maturity": 3, "dependencies": [],
       "next_gate": "Repeat content-hash checks after each material import.",
       "acceptance": ["No duplicate content, unrelated learning material, or generated tutorial files are committed"],
-      "evidence": ["Repository-wide SHA-256 audit found no remaining duplicate archive files after removing one duplicate 2025 D attachment.", "xducs-learning-tips is explicitly excluded.", "README.md remains minimal."]
+      "evidence": ["Repository-wide SHA-256 audit found no remaining duplicate archive files after removing one duplicate 2025 D attachment and checking 1,431 current files.", "xducs-learning-tips is explicitly excluded.", "README.md remains minimal."]
     }
   ],
   "requirements": [
     {"id": "REQ-SOURCES", "text": "Cover the user-confirmed Xidian, association, CUMCM, COMAP, and public-sharing URLs.", "priority": "must", "status": "verified", "system_ids": ["provenance"], "acceptance": ["All named URLs appear in the source index"], "evidence": ["08_时间线/来源索引.md"]},
     {"id": "REQ-CUMCM-HISTORY", "text": "Archive available CUMCM problems and attachments for 1992-2025, supplementing with public solutions where useful.", "priority": "must", "status": "verified", "system_ids": ["raw-materials", "provenance"], "acceptance": ["Historical files exist under the existing CUMCM directory and their source is recorded"], "evidence": ["02_国赛_CUMCM/历年真题", "08_时间线/来源索引.md"]},
-    {"id": "REQ-MCM-HISTORY", "text": "Systematically collect public MCM/ICM problems, data, Student Solutions, Judges Commentary, and excellent papers.", "priority": "must", "status": "in_progress", "system_ids": ["raw-materials", "provenance"], "acceptance": ["Available official and public files are organized by year without duplicate copies"], "evidence": ["03_美赛_MCM_ICM/历年真题/2026", "03_美赛_MCM_ICM/官方/2027"]},
+     {"id": "REQ-MCM-HISTORY", "text": "Systematically collect public MCM/ICM problems, data, Student Solutions, Judges Commentary, and excellent papers.", "priority": "must", "status": "in_progress", "system_ids": ["raw-materials", "provenance"], "acceptance": ["Available official and public files are organized by year without duplicate copies"], "evidence": ["03_美赛_MCM_ICM/历年真题", "03_美赛_MCM_ICM/官方结果", "03_美赛_MCM_ICM/Judges_Commentary", "03_美赛_MCM_ICM/SOURCES.md"]},
     {"id": "REQ-NO-TUTORIAL", "text": "Do not add tutorials, routes, summaries, unrelated Xidian learning material, or AI-generated solutions.", "priority": "must", "status": "verified", "system_ids": ["repository-hygiene"], "acceptance": ["Repository contains only archive-oriented files"], "evidence": ["README.md and repository inventory"]},
     {"id": "REQ-DEDUP", "text": "Store only one copy when different sources contain identical file content.", "priority": "must", "status": "verified", "system_ids": ["repository-hygiene"], "acceptance": ["Repository-wide SHA-256 duplicate scan is clean"], "evidence": ["2026-09-13 SHA-256 audit of the working archive", "Commit 3244542 pushed to DuaNapic/xdu-math-modeling-guide main"]}
   ],
